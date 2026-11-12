@@ -1,4 +1,3 @@
-// TEST  sur carte S3 Zero, le 1/1/2026 ArnaudRCO
 // connectez vous à 192.168.4.1 pour rentrer la connexion de votre BOX
 //  options outils > partition > HUGE APP et SPRAM > QSPI
 // SORTIE HP 
@@ -13,17 +12,6 @@
 #include "Audio.h"
 #include <WiFiManager.h> // https://github.com/tzapu/WiFiManager
 
-
-/* GPIOs utilisés ici pour l'ampli BF I2S  MAX98357A, autres choix possibles
-#define I2S_DOUT      10  // DIN connection 
-#define I2S_BCLK      11  // Bit clock 
-#define I2S_LRC       12  // Left Right Clock
-
-#define GND  1
-#define I2S_LRC  2
-#define I2S_DOUT  3
-#define I2S_BCLK 4
-#define SCK  5 */
 
 // MAX98357A Pins
 #define I2S_DOUT  3
@@ -159,38 +147,3 @@ void connectWifi() {
   //if you get here you have connected to the WiFi
   Serial.println("connected...yeey :)");
 } 
-
-// optional
-void audio_info(const char *info) {
-  Serial.print("info        "); Serial.println(info);
-}
-void audio_id3data(const char *info) { //id3 metadata
-  Serial.print("id3data     "); Serial.println(info);
-}
-void audio_eof_mp3(const char *info) { //end of file
-  Serial.print("eof_mp3     "); Serial.println(info);
-}
-void audio_showstation(const char *info) {
-  Serial.print("station     "); Serial.println(info);
-}
-void audio_showstreaminfo(const char *info) {
-  Serial.print("streaminfo  "); Serial.println(info);
-}
-void audio_showstreamtitle(const char *info) {
-  Serial.print("streamtitle "); Serial.println(info);
-}
-void audio_bitrate(const char *info) {
-  Serial.print("bitrate     "); Serial.println(info);
-}
-void audio_commercial(const char *info) { //duration in sec
-  Serial.print("commercial  "); Serial.println(info);
-}
-void audio_icyurl(const char *info) { //homepage
-  Serial.print("icyurl      "); Serial.println(info);
-}
-void audio_lasthost(const char *info) { //stream URL played
-  Serial.print("lasthost    "); Serial.println(info);
-}
-void audio_eof_speech(const char *info) {
-  Serial.print("eof_speech  "); Serial.println(info);
-}
